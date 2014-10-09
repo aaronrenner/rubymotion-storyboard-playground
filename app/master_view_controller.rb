@@ -5,8 +5,10 @@ class MasterViewController < UIViewController
   outlet :text_field, UITextField
   outlet :button, UIButton
 
-  def button_pressed(sender)
-    title.text = text_field.text
-    text_field.text = ""
+  def prepareForSegue(segue, sender: sender)
+    if segue.identifier == "SayAThing"
+      segue.destinationViewController.say_a_thing(text_field.text)
+      text_field.text = ""
+    end
   end
 end

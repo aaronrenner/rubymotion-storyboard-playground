@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YLj-Dj-m0T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NdE-pu-Jwd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Master View Controller-->
+        <!--Say A Thing-->
         <scene sceneID="QPN-wZ-wo3">
             <objects>
                 <viewController id="YLj-Dj-m0T" customClass="MasterViewController" sceneMemberID="viewController">
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter new text below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="05D-uX-Y3D">
-                                <rect key="frame" x="16" y="20" width="568" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter new text below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="05D-uX-Y3D">
+                                <rect key="frame" x="16" y="72" width="568" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vli-1O-DyX"/>
                                 </constraints>
@@ -26,26 +26,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-V0-jJb">
+                                <rect key="frame" x="16" y="189" width="568" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nSH-UD-dum"/>
+                                </constraints>
+                                <state key="normal" title="Say It!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BZa-dr-7xG" kind="push" identifier="SayAThing" id="2Nv-Nj-DuC"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="What to say" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Hj-uT-nMQ">
-                                <rect key="frame" x="19" y="78" width="568" height="51"/>
+                                <rect key="frame" x="16" y="130" width="568" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="lxE-8i-254"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-V0-jJb">
-                                <rect key="frame" x="19" y="137" width="568" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="nSH-UD-dum"/>
-                                </constraints>
-                                <state key="normal" title="Click me to update label">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="button_pressed:" destination="YLj-Dj-m0T" eventType="touchUpInside" id="zzC-i3-ts2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -60,6 +60,7 @@
                             <constraint firstItem="05D-uX-Y3D" firstAttribute="trailing" secondItem="RhQ-hh-1ka" secondAttribute="trailingMargin" id="zYE-Ql-2jc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Say A Thing" id="OMA-Yl-5wu"/>
                     <connections>
                         <outlet property="button" destination="EEP-V0-jJb" id="o4v-8j-Zqo"/>
                         <outlet property="text_field" destination="1Hj-uT-nMQ" id="r0D-bL-SSD"/>
@@ -67,6 +68,62 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AL1-Yn-vAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="397"/>
+        </scene>
+        <!--Saying The Thing-->
+        <scene sceneID="pof-h2-Sz7">
+            <objects>
+                <viewController id="BZa-dr-7xG" customClass="SayingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mNO-4J-35i"/>
+                        <viewControllerLayoutGuide type="bottom" id="a4L-FQ-29W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RIN-0k-Ab4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjG-V2-Nje">
+                                <rect key="frame" x="16" y="72" width="568" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ey8-OL-qfs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KjG-V2-Nje" firstAttribute="leading" secondItem="RIN-0k-Ab4" secondAttribute="leadingMargin" id="49M-MY-wAo"/>
+                            <constraint firstItem="KjG-V2-Nje" firstAttribute="trailing" secondItem="RIN-0k-Ab4" secondAttribute="trailingMargin" id="HoV-eb-jnm"/>
+                            <constraint firstItem="KjG-V2-Nje" firstAttribute="top" secondItem="mNO-4J-35i" secondAttribute="bottom" constant="8" id="edA-Gb-AYJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Saying The Thing" id="8lh-9y-RT1"/>
+                    <connections>
+                        <outlet property="saying_label" destination="KjG-V2-Nje" id="C5E-m4-jL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grP-ZE-FLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1925" y="397"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pLQ-S7-eFl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NdE-pu-Jwd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2TI-Q0-9xR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YLj-Dj-m0T" kind="relationship" relationship="rootViewController" id="3ke-wh-CX7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NM4-1m-lIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="429" y="397"/>
         </scene>
