@@ -11,5 +11,4 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'storyboard_example'
-  app.sdk_version = '7.0'
 end
