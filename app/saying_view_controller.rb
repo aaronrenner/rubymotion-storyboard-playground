@@ -9,5 +9,6 @@ class SayingViewController < UIViewController
 
   def viewDidLoad
     saying_label.text = @thing_to_say
+    saying_label.accessibilityValue = @thing_to_say
   end
 end

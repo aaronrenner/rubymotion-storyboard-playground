@@ -11,4 +11,8 @@ class MasterViewController < UIViewController
       text_field.text = ""
     end
   end
+
+  def viewDidLoad
+    text_field.becomeFirstResponder
+  end
 end
